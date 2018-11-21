@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="index.js"></script>
+<style type="text/css">
+span {
+/* background-color:#ffcc00; */
+display:-moz-inline-box;
+display:inline-block;
+width:150px;
+}
+</style>
+
+</head>
+<body>
+<h3>request_xxx: descript</h3>
+<form action="xml" method="post" target="_blank">
+<input type="hidden" name="__requestId" value="123"/>
+<span>Report_Name:</span>
+<input type="text" name="Report_Name" value="hello"/><br>
+<span>Wss_Acct_No:</span>
+<input type="text" name="Wss_Acct_No" value="cch"/><br>
+<span>Type:</span>
+<select name="Type">
+  <option value ="Select" >Select</option>
+  <option value ="TypeA">TypeA</option>
+  <option value="TypeB">TypeB</option>
+</select><br>
+<span>Date:</span>
+<input type="date" name="Date"><br>
+
+<input type="submit"/>
+</form>
+<br>
+
+</body>
+</html>
