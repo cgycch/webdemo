@@ -22,14 +22,28 @@ width:150px;
 <input type="text" name="Report_Name" value="hello"/><br>
 <span>Wss_Acct_No:</span>
 <input type="text" name="Wss_Acct_No" value="cch"/><br>
+<span>Date:</span>
+<input type="date" name="Date"><br>
 <span>Type:</span>
 <select name="Type">
   <option value ="Select" >Select</option>
   <option value ="TypeA">TypeA</option>
   <option value="TypeB">TypeB</option>
 </select><br>
-<span>Date:</span>
-<input type="date" name="Date"><br>
+<span>Sex:</span>
+Woman<input type="radio" name="Sex" value="Woman" />
+Man<input type="radio" name="Sex" value="Man"/><br>
+<span>Hobit:</span>
+Slepping<input type="checkbox" name="Hobit" value="Slepping"/>
+Playing<input type="checkbox" name="Hobit" value="Playing"/>
+Eatting<input type="checkbox" name="Hobit" value="Eatting"/><br>
+<span>Comtext:</span>
+<div>
+<table border="1" id="tab">
+	<thead><tr><td>No</td><td>Name</td><td>Act</td><tr></thead>
+	<tr><td>001</td><td>cch</td><td><button onclick="add()">add</button>&nbsp;&nbsp;<button onclick="del()">del</button></td><tr>
+</table>
+</div>
 
 <input type="submit"/>
 </form>

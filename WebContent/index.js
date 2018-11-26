@@ -24,7 +24,12 @@ function testAjax(){
 		console.log("not support XMLHttp");
 	}
 }
-
+function add(){
+	console.log('todo');
+}
+function del(){
+	console.log('todo');
+}
 
 function checkForm(formId){  
     var params = serializeForm(formId);  
@@ -42,11 +47,10 @@ function getElements(formId) {
          elements.push(tagElements[j]);  
   
     }  
-   /* var selectElements = form.getElementsByTagName('select');    
+    var selectElements = form.getElementsByTagName('select');    
     for (var j = 0; j < selectElements.length; j++){  
     	elements.push(selectElements[j]);  
-    	
-    }  */
+    }  
     return elements;    
 }   
   
@@ -62,17 +66,33 @@ function input(element) {
       case 'hidden':    
       case 'password':    
       case 'text':    
+      case 'date':    
         return [element.name, element.value];    
       case 'checkbox':    
       case 'radio':    
         return inputSelector(element);    
     }    
     return false;    
-}    
+}   
+
+function select(element){
+	var index = element.selectedIndex;
+	//var text = element.options[index].text; 
+	var value = element.options[index].value; 
+	return [element.name, value];
+}
   
 function serializeElement(element) {    
-    var method = element.tagName.toLowerCase();    
-    var parameter = input(element);    
+    var tag = element.tagName.toLowerCase(); 
+    var parameter;
+    if(tag =='input'){
+    	parameter = input(element); 
+    }else if(tag =='select'){
+    	parameter = select(element); 
+    }else{
+    	console.log('no support tagName');
+    }
+       
     
     if (parameter) {    
       var key = encodeURIComponent(parameter[0]);    
